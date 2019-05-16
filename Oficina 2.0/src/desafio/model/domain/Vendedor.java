@@ -106,6 +106,8 @@ public class Vendedor implements Serializable {
     }
     
     public static boolean isValidVendedor(Vendedor vendedor) {
+        if(vendedor == null)
+            return false;
         return isValidNome(vendedor.nome) && isValidNroRegistro(vendedor.nroRegistro);
     }
     

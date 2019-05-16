@@ -28,7 +28,6 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Orcamento.findAll", query = "SELECT o FROM Orcamento o"),
     @NamedQuery(name = "Orcamento.findByIdOrcamento", query = "SELECT o FROM Orcamento o WHERE o.idOrcamento = :idOrcamento"),
     @NamedQuery(name = "Orcamento.findByDataEHora", query = "SELECT o FROM Orcamento o WHERE o.dataEHora = :dataEHora"),
-    @NamedQuery(name = "Orcamento.findByDescricao", query = "SELECT o FROM Orcamento o WHERE o.descricao = :descricao"),
     @NamedQuery(name = "Orcamento.findByValor", query = "SELECT o FROM Orcamento o WHERE o.valor = :valor")})
 public class Orcamento implements Serializable {
 
@@ -167,4 +166,23 @@ public class Orcamento implements Serializable {
         return dataEHora.before(agora) || dataEHora.equals(agora);
     }
     
+    public static boolean isValidCliente(Cliente cliente) {
+        return Cliente.isValidCliente(cliente);
+    }
+    
+    public static boolean isValidVendedor(Vendedor vendedor) {
+        return Vendedor.isValidVendedor(vendedor);
+    }
+    
+    public static boolean isValidOrcamento (Orcamento Orcamento) {
+        if (Orcamento == null)
+            return false;
+        
+        return isValidValor(Orcamento.valor)
+                && isValidIdOrcamento(Orcamento.idOrcamento)
+                && isValidDescricao(Orcamento.descricao)
+                && isValidDataEHora(Orcamento.dataEHora)
+                && isValidCliente(Orcamento.cliente)
+                && isValidVendedor(Orcamento.vendedor);
+    }
 }
