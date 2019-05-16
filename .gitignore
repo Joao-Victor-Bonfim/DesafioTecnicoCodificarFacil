@@ -21,3 +21,11 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Arquivos gerados pelo NetBeans:
+# Artquivos do projeto associados ao computador/usuário.
+/Oficina\ 2.0/nbproject/private/
+# Arquivos da construção do projeto
+/Oficina\ 2.0/build/
+# Arquivos de distribuição do projeto
+/Oficina\ 2.0/dist/
