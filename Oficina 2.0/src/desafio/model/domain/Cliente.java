@@ -97,7 +97,7 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "desafio.model.domain.Cliente[ id = " + id + "; nome = " + nome + " ]";
+        return "Cliente " + nome;
     }
     
     public static boolean isValidNome(String nome) {

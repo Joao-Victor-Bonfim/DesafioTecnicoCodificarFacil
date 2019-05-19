@@ -14,7 +14,7 @@ import javax.persistence.PersistenceException;
  *
  * @author João Victor Bonfim
  */
-public class DaoOrcamentoImpl extends DaoImpl implements DaoOrcamento {
+public class DaoOrcamentoImpl implements DaoImpl, DaoOrcamento {
     
     private static final DaoOrcamentoImpl IMPLEMENTACAO = new DaoOrcamentoImpl();
     private static final EntityManagerFactory EMF = Persistence.createEntityManagerFactory(PU);

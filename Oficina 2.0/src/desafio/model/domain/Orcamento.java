@@ -138,7 +138,7 @@ public class Orcamento implements Serializable {
 
     @Override
     public String toString() {
-        return "desafio.model.domain.Orcamento[ idOrcamento=" + idOrcamento + " ]";
+        return "Orçamento Nº " + idOrcamento;
     }
     
     public static boolean isValidValor(Double valor) {

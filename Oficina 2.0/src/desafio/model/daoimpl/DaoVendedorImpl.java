@@ -14,7 +14,7 @@ import javax.persistence.PersistenceException;
  *
  * @author João Victor Bonfim
  */
-public class DaoVendedorImpl extends DaoImpl implements DaoVendedor{
+public class DaoVendedorImpl implements DaoImpl, DaoVendedor{
 
     private static final DaoVendedorImpl IMPLEMENTACAO = new DaoVendedorImpl();
     private static final EntityManagerFactory EMF = Persistence.createEntityManagerFactory(PU);

@@ -93,7 +93,7 @@ public class Vendedor implements Serializable {
 
     @Override
     public String toString() {
-        return "desafio.model.domain.Vendedor[ nroRegistro=" + nroRegistro + " ]";
+        return "Vendedor " + nome;
     }
     
     public static boolean isValidNome(String nome) {
