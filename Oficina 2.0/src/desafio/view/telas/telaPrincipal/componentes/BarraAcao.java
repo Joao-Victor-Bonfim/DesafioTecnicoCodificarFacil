@@ -10,22 +10,29 @@ import javax.swing.border.BevelBorder;
  * @author João Victor Bonfim
  */
 public class BarraAcao extends JToolBar {
-    
+
     protected JButton editar;
     protected JButton deletar;
-    
+
+    public BarraAcao(String name, int orientation) {
+        super(name, orientation);
+        initComponents();
+    }
+
     public BarraAcao() {
-        super( "Barra de ações.", HORIZONTAL);
-        
+        this("Barra de ações.", HORIZONTAL);
+    }
+
+    private void initComponents() {
         editar = new JButton("Editar");
         editar.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
         add(editar);
-        
+
         deletar = new JButton("Deletar");
         deletar.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
         add(deletar);
     }
-    
+
     public JButton getEditar() {
         return editar;
     }

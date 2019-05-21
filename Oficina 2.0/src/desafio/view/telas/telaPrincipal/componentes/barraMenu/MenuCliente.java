@@ -9,9 +9,18 @@ import javax.swing.JMenuItem;
  * @author João Victor Bonfim
  */
 public class MenuCliente extends JMenu {
-    
+
     private JMenuItem novo;
     private JMenu pesquisar;
+
+    public MenuCliente() {
+        this("Cliente");
+    }
+
+    public MenuCliente(String texto) {
+        super(texto);
+        initComponents();
+    }
 
     public JMenuItem getNovo() {
         return novo;
@@ -21,14 +30,11 @@ public class MenuCliente extends JMenu {
         return pesquisar;
     }
 
-    public MenuCliente() {
-        super("Cliente");
-        
+    private void initComponents() {
         novo = new JMenuItem("novo");
         add(novo);
-        
+
         pesquisar = new MenuPesquisaCliente();
         add(pesquisar);
-        
     }
 }
