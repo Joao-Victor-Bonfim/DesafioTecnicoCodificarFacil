@@ -14,9 +14,11 @@ public class MenuPesquisaVendedor extends JMenu {
     private JMenuItem nome;
 
     private JMenuItem nroRegistro;
+
     public MenuPesquisaVendedor() {
         this("Listar:");
     }
+
     public MenuPesquisaVendedor(String texto) {
         super(texto);
         initComponents();
@@ -34,7 +36,6 @@ public class MenuPesquisaVendedor extends JMenu {
         return nroRegistro;
     }
 
-    
     private void initComponents() {
         todos = new JMenuItem("Todos");
         add(todos);
@@ -45,5 +46,5 @@ public class MenuPesquisaVendedor extends JMenu {
         nroRegistro = new JMenuItem("Por número de registro");
         add(nroRegistro);
     }
-    
+
 }

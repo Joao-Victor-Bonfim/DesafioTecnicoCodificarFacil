@@ -1,4 +1,4 @@
-package desafio.view.telas.telaPrincipal.componentes.palcoResultado;
+package desafio.view.telas.telaPrincipal.componentes.palcoResultado.conteudo;
 
 import desafio.model.domain.Orcamento;
 import desafio.util.format.TextToSwingFormatter;
@@ -24,49 +24,49 @@ public class ConteudoOrcamento extends JPanel {
 
     public ConteudoOrcamento(Orcamento orcamento) {
         super(new GridLayout(8, 2));
-        
+
         initComponents(orcamento);
     }
-    
+
     private void initComponents(Orcamento orcamento) {
-        
+
         idOrcamento = new JLabel();
         idOrcamento.setHorizontalAlignment(SwingConstants.CENTER);
         add(new JLabel("ID:"));
         add(idOrcamento);
-        
+
         dataEHora = new JLabel();
         dataEHora.setHorizontalAlignment(SwingConstants.CENTER);
         add(new JLabel("Data e hora (DD/MM/AAAA HH:mm):"));
         add(dataEHora);
-        
+
         descricao = new JLabel();
         descricao.setHorizontalAlignment(SwingConstants.CENTER);
         add(new JLabel("Descrição:"));
         add(descricao);
-        
+
         preco = new JLabel();
         preco.setHorizontalAlignment(SwingConstants.CENTER);
         add(new JLabel("Preço (R$):"));
         add(preco);
-        
+
         registroVendedor = new JLabel();
         registroVendedor.setHorizontalAlignment(SwingConstants.CENTER);
         add(new JLabel("Vendedor:"));
         add(registroVendedor);
-        
+
         registroCliente = new JLabel();
         registroCliente.setHorizontalAlignment(SwingConstants.CENTER);
         add(new JLabel("Cliente:"));
         add(registroCliente);
-        
+
         updateOrcamento(orcamento);
     }
 
     private void updateTextFromIdOrcamento(String text) {
         idOrcamento.setText(text);
     }
-    
+
     private void updateTextFromDataEHora(String text) {
         dataEHora.setText(text);
     }
@@ -74,21 +74,21 @@ public class ConteudoOrcamento extends JPanel {
     private void updateTextFromDescricao(String text) {
         descricao.setText(text);
     }
-    
+
     private void updateTextFromPreco(String text) {
         preco.setText(text);
     }
-    
+
     private void updateTextFromRegistroVendedor(String text) {
         registroVendedor.setText(text);
     }
-    
+
     private void updateTextFromRegistroCliente(String text) {
         registroCliente.setText(text);
     }
-    
+
     public void updateOrcamento(Orcamento orcamento) {
-        updateTextFromIdOrcamento(orcamento.getIdOrcamento().toString());
+        updateTextFromIdOrcamento(orcamento.getId().toString());
         updateTextFromDataEHora(new SimpleDateFormat("dd/MM/yyyy HH:mm").format(orcamento.getDataEHora()));
         updateTextFromDescricao(orcamento.toString());
         updateTextFromPreco(new DecimalFormat("#.00").format(orcamento.getValor()));

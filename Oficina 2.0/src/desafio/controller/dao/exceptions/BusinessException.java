@@ -1,4 +1,4 @@
-package desafio.exception;
+package desafio.controller.dao.exceptions;
 
 /**
  *

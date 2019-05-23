@@ -1,4 +1,4 @@
-package desafio.view.telas.telaPrincipal.componentes.palcoResultado;
+package desafio.view.telas.telaPrincipal.componentes.palcoResultado.conteudo;
 
 import desafio.model.domain.Vendedor;
 import java.awt.GridLayout;
@@ -28,7 +28,7 @@ public class ConteudoVendedor extends JPanel {
         updateTextFromNroRegistro(vendedor.getNroRegistro().toString());
         updateTextFromNome(vendedor.getNome());
     }
-    
+
     public ConteudoVendedor(Vendedor vendedor) {
         this(new GridLayout(2, 2), vendedor);
     }
@@ -38,7 +38,7 @@ public class ConteudoVendedor extends JPanel {
 
         initComponents(vendedor);
     }
-    
+
     private void initComponents(Vendedor vendedor) {
         add(new JLabel("ID:"));
         nroRegistro = new JLabel();
@@ -49,7 +49,7 @@ public class ConteudoVendedor extends JPanel {
         nome = new JLabel();
         nome.setHorizontalAlignment(SwingConstants.CENTER);
         add(nome);
-        
+
         updateVendedor(vendedor);
     }
 }

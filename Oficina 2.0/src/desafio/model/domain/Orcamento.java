@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Orcamento.findAll", query = "SELECT o FROM Orcamento o"),
-    @NamedQuery(name = "Orcamento.findByIdOrcamento", query = "SELECT o FROM Orcamento o WHERE o.idOrcamento = :idOrcamento"),
+    @NamedQuery(name = "Orcamento.findById", query = "SELECT o FROM Orcamento o WHERE o.id = :id"),
     @NamedQuery(name = "Orcamento.findByDataEHora", query = "SELECT o FROM Orcamento o WHERE o.dataEHora = :dataEHora"),
     @NamedQuery(name = "Orcamento.findByValor", query = "SELECT o FROM Orcamento o WHERE o.valor = :valor")})
 public class Orcamento implements Serializable {
@@ -36,7 +36,7 @@ public class Orcamento implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id_orcamento")
-    private Integer idOrcamento;
+    private Integer id;
     @Basic(optional = false)
     @Column(name = "data_e_hora")
     @Temporal(TemporalType.DATE)
@@ -58,22 +58,22 @@ public class Orcamento implements Serializable {
     }
 
     public Orcamento(Integer idOrcamento) {
-        this.idOrcamento = idOrcamento;
+        this.id = idOrcamento;
     }
 
     public Orcamento(Integer idOrcamento, Date dataEHora, String descricao, double valor) {
-        this.idOrcamento = idOrcamento;
+        this.id = idOrcamento;
         this.dataEHora = dataEHora;
         this.descricao = descricao;
         this.valor = valor;
     }
 
-    public Integer getIdOrcamento() {
-        return idOrcamento;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdOrcamento(Integer idOrcamento) {
-        this.idOrcamento = idOrcamento;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Date getDataEHora() {
@@ -92,7 +92,7 @@ public class Orcamento implements Serializable {
         this.descricao = descricao;
     }
 
-    public double getValor() {
+    public Double getValor() {
         return valor;
     }
 
@@ -121,7 +121,7 @@ public class Orcamento implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idOrcamento != null ? idOrcamento.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -133,12 +133,12 @@ public class Orcamento implements Serializable {
         }
 
         Orcamento other = (Orcamento) object;
-        return !((this.idOrcamento == null && other.idOrcamento != null) || (this.idOrcamento != null && !this.idOrcamento.equals(other.idOrcamento)));
+        return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
     public String toString() {
-        return "Orçamento Nº " + idOrcamento + System.lineSeparator()
+        return "Orçamento Nº " + id + System.lineSeparator()
                 + "Preço (R$): " + valor;
     }
 
@@ -184,7 +184,7 @@ public class Orcamento implements Serializable {
         }
 
         return isValidValor(Orcamento.valor)
-                && isValidIdOrcamento(Orcamento.idOrcamento)
+                && isValidIdOrcamento(Orcamento.id)
                 && isValidDescricao(Orcamento.descricao)
                 && isValidDataEHora(Orcamento.dataEHora)
                 && isValidCliente(Orcamento.cliente)

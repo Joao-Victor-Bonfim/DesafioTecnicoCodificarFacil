@@ -63,7 +63,7 @@ public class PalcoResultado extends JPanel {
     public void addListSelectionListener(ListSelectionListener listener) {
         resultados.addListSelectionListener(listener);
     }
-    
+
     public JList getListaFromResultados() {
         return resultados.getLista();
     }
